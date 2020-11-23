@@ -12,6 +12,7 @@ import { Link, useLocation } from "react-router-dom";
 
 //local import
 import logo from "../assets/logo.png";
+import ThemeColorPicker from "./ThemeColorPicker";
 
 function ElevationScroll(props) {
   const { children, elevationValue } = props;
@@ -29,37 +30,7 @@ function ElevationScroll(props) {
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
-    marginBottom: "2rem",
   },
-  logoButton: {
-    padding: 0,
-    border: "none",
-    "&:hover": {
-      backgroundColor: "unset",
-    },
-  },
-  logo: {
-    height: "5rem",
-    // marginRight: "auto",
-    // flex: "1 0 0",
-  },
-  tabs: {
-    marginLeft: "auto",
-  },
-  tab: {
-    ...theme.typography.tab,
-    height: "5rem",
-    minWidth: 60,
-    marginLeft: 25,
-  },
-  button: {
-    ...theme.typography.estimate,
-    borderRadius: 100,
-    margin: "0 1.5rem 0 3rem",
-    minWidth: 140,
-    height: 35,
-  },
-  buttonLabel: {},
 }));
 
 const tabLinkMap = ["/", "/services", "/revolution", "/about", "/contact"];
@@ -88,7 +59,9 @@ export default function Header(props) {
     <>
       <ElevationScroll elevationValue={24}>
         <AppBar color="primary">
-          <Toolbar variant="dense"></Toolbar>
+          <Toolbar>
+            <ThemeColorPicker />
+          </Toolbar>
         </AppBar>
       </ElevationScroll>
       <div className={classes.toolbarMargin}></div>
