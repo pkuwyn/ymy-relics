@@ -1,4 +1,3 @@
-import { red } from "@material-ui/core/colors";
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
 import { zhCN } from "@material-ui/core/locale";
 
@@ -14,7 +13,7 @@ let theme = createMuiTheme(
         orange: arcOrange,
       },
       primary: {
-        main: "#c62828",
+        main: "#C53836",
       },
       secondary: {
         main: "#ffab40",
@@ -24,31 +23,9 @@ let theme = createMuiTheme(
     typography: {
       fontFamily: ["Arial", "sans-serif", "Microsoft YaHei"].join(","),
       htmlFontSize: 16,
-      // fontSize: 14,
       fontSize: 14,
-      // h3: {
-      //   fontSize: "1.6rem",
-      //   fontWeight: 300,
-      // },
-
-      tab: {
-        fontFamily: "Raleway",
-        fontWeight: 700,
-        fontSize: "1rem",
-        textTransform: "none",
-      },
-      estimate: {
-        fontFamily: "Pacifico",
-        fontSize: "1rem",
-        fontWeight: 300,
-        textTransform: "none",
-        color: "white",
-      },
     },
     props: {
-      // MuiToolbar: {
-      //   disableGutters: true,
-      // },
       MuiButton: {
         variant: "outlined",
       },
