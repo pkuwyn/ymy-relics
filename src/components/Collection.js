@@ -80,7 +80,7 @@ export default function Collection({
           elevation={4}
           className={classes.paper}
           onClick={() => {
-            history.push(`/${collection_id}`);
+            history.push(`/collection/${collection_id}`);
           }}
         >
           <img

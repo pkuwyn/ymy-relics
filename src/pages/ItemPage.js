@@ -54,7 +54,7 @@ export default function ItemPage({ match: { params }, collections }) {
     );
     return {
       name: collection.collection_name,
-      link: `/${collection.collection_id}`,
+      link: `/collection/${collection.collection_id}`,
     };
   };
 

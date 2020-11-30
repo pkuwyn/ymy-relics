@@ -74,7 +74,7 @@ export default function Item({
     window.open(`http://www.sourcescene.com${item_linkurl}`);
   };
   return (
-    <Grid item xs={12} sm={6} md={4} xl={2}>
+    <Grid item xs={12} sm={6} md={4}>
       <Paper className={classes.paper} elevation={1} onClick={gotoPano}>
         <IconButton
           aria-label="pano"

@@ -36,19 +36,19 @@ function App() {
             <Container maxWidth={false}>
               <Switch>
                 <Route
-                  exact
+                  path="/collection/:collectionId"
+                  render={(renderProps) => (
+                    <ItemPage collections={collections} {...renderProps} />
+                  )}
+                ></Route>
+
+                <Route
                   path="/"
                   render={(renderProps) => (
                     <CollectionPage
                       collections={collections}
                       {...renderProps}
                     />
-                  )}
-                ></Route>
-                <Route
-                  path="/:collectionId"
-                  render={(renderProps) => (
-                    <ItemPage collections={collections} {...renderProps} />
                   )}
                 ></Route>
               </Switch>

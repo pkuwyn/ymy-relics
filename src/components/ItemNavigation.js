@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
 
     "&:hover": {
-      color: theme.palette.primary.light,
+      color: theme.palette.primary.main,
     },
   },
   page: {
@@ -70,11 +70,11 @@ export default function ItemNavigation({
 
         <ButtonBase>
           <Typography
-            color="disabled"
+            color="textPrimary"
             className={`${classes.text} ${classes.page}`}
           >
             <MenuBookOutlinedIcon className={classes.icon} />
-            {`第${secondLevel}页`}
+            {secondLevel}
           </Typography>
         </ButtonBase>
       </Breadcrumbs>
