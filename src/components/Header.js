@@ -3,15 +3,18 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from "@material-ui/core/styles";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+
 import { Link, useLocation } from "react-router-dom";
 
+//icon
+import MapIcon from "@material-ui/icons/Map";
+
 //local import
-import logo from "../assets/logo.png";
+import logo from "../assets/ymylogo.png";
 
 function ElevationScroll(props) {
   const { children, elevationValue } = props;
@@ -29,22 +32,23 @@ function ElevationScroll(props) {
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     // ...theme.mixins.toolbar,
-    height: "8rem",
+    height: "5rem",
   },
   toolbar: {
-    height: "8rem",
-    // justifyContent: "flex-start",
+    height: "5rem",
   },
   logo: {
-    height: "5rem",
-    marginRight: theme.spacing(2),
+    height: "3.5rem",
+    marginRight: theme.spacing(1),
   },
   title: {
-    // flexGrow: 1,
     display: "block",
-    // [theme.breakpoints.up("sm")]: {
-    //   display: "block",
-    // },
+    marginRight: "auto",
+    fontSize: "1.15rem",
+    userSelect: "none",
+  },
+  button: {
+    color: theme.palette.secondary.light,
   },
 }));
 
@@ -79,9 +83,26 @@ export default function Header(props) {
             <Link to="/">
               <img src={logo} alt="logo" className={classes.logo} />
             </Link>
-            <Typography className={classes.title} variant="h5" noWrap>
+            <Typography
+              className={classes.title}
+              variant="h6"
+              noWrap
+              color="secondary"
+            >
               圆明园文物数字化
             </Typography>
+            <Button
+              variant="text"
+              // color="secondary"
+              size="large"
+              className={classes.button}
+              startIcon={<MapIcon />}
+              onClick={() => {
+                window.open("http://www.sourcescene.com/map/show_map/ymy/");
+              }}
+            >
+              地图模式
+            </Button>
           </Toolbar>
         </AppBar>
       </ElevationScroll>

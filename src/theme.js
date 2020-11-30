@@ -2,8 +2,10 @@ import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
 import { zhCN } from "@material-ui/core/locale";
 
 //color defination
-const arcBlue = "#0B72B9";
+const arcBlue = "#3D71A4";
 const arcOrange = "#FFBA60";
+const ymyYellow = "#D6B87E";
+const logoRed = "#C53836";
 
 let theme = createMuiTheme(
   {
@@ -13,17 +15,23 @@ let theme = createMuiTheme(
         orange: arcOrange,
       },
       primary: {
-        main: "#C53836",
+        main: ymyYellow,
       },
       secondary: {
-        main: "#ffab40",
+        main: logoRed,
       },
     },
 
     typography: {
-      fontFamily: ["Arial", "sans-serif", "Microsoft YaHei"].join(","),
+      fontFamily: ["sans-serif", "Microsoft YaHei"].join(","),
       htmlFontSize: 16,
       fontSize: 14,
+      subtitle2: {
+        fontWeight: 700,
+      },
+      button: {
+        fontWeight: 500,
+      },
     },
     props: {
       MuiButton: {
@@ -41,13 +49,13 @@ let theme = createMuiTheme(
       //     border: "5px solid green",
       //   },
       // },
-      //   MuiCssBaseline: {
-      //     "@global": {
-      //       html: {
-      //         backgroundColor: "red",
-      //       },
-      //     },
-      //   },
+      MuiCssBaseline: {
+        "@global": {
+          body: {
+            height: "100vh",
+          },
+        },
+      },
     },
   },
   zhCN

@@ -1,20 +1,27 @@
 import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
 
 //local import
-import { useJsonApi } from "../hooks/dataFetchHooks";
 import GridLayout from "../layout/GridLayout";
 import Collection from "../components/Collection";
 
-export default function CollectionPage(props) {
-  const [collections, setCollections] = useJsonApi(
-    "http://www.sourcescene.com/map/json_collections/"
-  );
+const useStyles = makeStyles((theme) => ({
+  collection: {
+    marginTop: theme.spacing(2),
+  },
+}));
+
+export default function CollectionPage({ collections }) {
+  const classes = useStyles();
 
   return (
     <>
-      <p>CollectionPage</p>
-      <p>{JSON.stringify(collections)}</p>
-      <GridLayout dataList={collections} component={Collection}></GridLayout>
+      {/* <p>CollectionPage</p>
+      <p>{JSON.stringify(collections)}</p> */}
+      <div className={classes.collection}>
+        <GridLayout dataList={collections} component={Collection}></GridLayout>
+      </div>
     </>
   );
 }
