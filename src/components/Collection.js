@@ -3,8 +3,6 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import { Height } from "@material-ui/icons";
 import { useHistory } from "react-router-dom";
 import ButtonBase from "@material-ui/core/ButtonBase";
 
@@ -75,9 +73,6 @@ export default function Collection({
   const classes = useStyles();
   let history = useHistory();
 
-  const gotoMap = () => {
-    window.open(extraCollectionConfig[collection_id].map_link);
-  };
   return (
     <>
       <Grid item xs={12} md={6}>
