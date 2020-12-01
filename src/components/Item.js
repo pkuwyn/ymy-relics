@@ -75,7 +75,7 @@ export default function Item({
   };
   return (
     <Grid item xs={12} sm={6} md={4}>
-      <Paper className={classes.paper} elevation={1} onClick={gotoPano}>
+      <Paper className={classes.paper} elevation={1}>
         <IconButton
           aria-label="pano"
           color="primary"
@@ -85,7 +85,12 @@ export default function Item({
           <PanoramaOutlinedIcon />
         </IconButton>
 
-        <img src={item_picurl} alt={item_name} className={classes.img} />
+        <img
+          src={item_picurl}
+          alt={item_name}
+          className={classes.img}
+          onClick={gotoPano}
+        />
         <div className={classes.bottom}>
           <Typography
             color="textPrimary"

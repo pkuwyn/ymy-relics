@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import { useHistory } from "react-router-dom";
 import ButtonBase from "@material-ui/core/ButtonBase";
+import "./webkit.css";
 
 const extraCollectionConfig = {
   beida: {
@@ -19,11 +20,11 @@ const extraCollectionConfig = {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    position: "relative",
+    userSelect: "none",
     overflow: "hidden",
     display: "flex",
+    alignItems: "center",
     cursor: "pointer",
-
     "&:hover ": {
       "& $img": {
         opacity: 1,
@@ -36,18 +37,21 @@ const useStyles = makeStyles((theme) => ({
     display: "block",
     transition: "all 0.5s",
     opacity: 0.95,
-    clipPath: `polygon(0 0, 100% 0, 90% 100%, 0% 100%)`,
+    clipPath: "polygon(0 0, 100% 0, 90% 100%, 0% 100%)",
   },
-  content: {
+  right: {
+    alignSelf: "stretch",
     padding: theme.spacing(2),
-    width: "100%",
+    position: "relative",
+    width: "30%",
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
     justifyContent: "center",
+  },
+  content: {
+    width: "100%",
+
     textAlign: "center",
-    position: "reletive",
-    userSelect: "none",
   },
   year: {
     width: 50,
@@ -56,7 +60,11 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
     right: 0,
     backgroundColor: theme.palette.primary.main,
-    clipPath: `polygon(100% 0, 0% 100%, 100% 100%)`,
+    clipPath: "polygon(100% 0, 0% 100%, 100% 100%)",
+  },
+  buttonbase: {
+    padding: 3,
+    borderRadius: 10,
   },
   text: {
     position: "absolute",
@@ -86,16 +94,19 @@ export default function Collection({
           <img
             src={collection_picurl}
             alt={collection_name}
-            className={classes.img}
+            className={`${classes.img} img-webkit`}
           />
-          <div className={classes.content}>
-            <ButtonBase>
-              <Typography color="textPrimary" variant="subtitle2">
-                {collection_name}
-              </Typography>
-            </ButtonBase>
 
-            <div className={classes.year}>
+          <div className={classes.right}>
+            <div className={classes.content}>
+              <ButtonBase className={classes.buttonbase}>
+                <Typography color="textPrimary" variant="subtitle2">
+                  {collection_name}
+                </Typography>
+              </ButtonBase>
+            </div>
+
+            <div className={`${classes.year} year-webkit`}>
               <Typography
                 color="secondary"
                 variant="caption"

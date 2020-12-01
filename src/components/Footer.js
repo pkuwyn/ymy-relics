@@ -32,7 +32,7 @@ export default function Footer(props) {
         className={classes.text}
         noWrap
       >
-        版权所有 © 北京大学考古虚拟仿真实验教学中心
+        技术支持 © 北京大学考古虚拟仿真实验教学中心
       </Typography>
     </footer>
   );
